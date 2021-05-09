@@ -6,6 +6,7 @@ abstract class AuthState implements Built<AuthState, AuthStateBuilder> {
 
   AuthState._();
 
+  EmployeeUser? get user;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 

@@ -6,6 +6,18 @@ abstract class EmployeeUser implements Built<EmployeeUser, EmployeeUserBuilder> 
 
   EmployeeUser._();
 
+  String get uid;
+
+  String get adminId;
+
+  String get email;
+
+  String get firstName;
+
+  String get lastName;
+
+  BuiltList<Role> get roles;
+
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 
