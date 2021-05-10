@@ -16,7 +16,7 @@ class FoodDeliveryReceptionist extends StatefulWidget {
   _FoodDeliveryReceptionistState createState() => _FoodDeliveryReceptionistState();
 }
 
-class _FoodDeliveryReceptionistState extends State<FoodDeliveryReceptionist> with InitMixin {
+class _FoodDeliveryReceptionistState extends State<FoodDeliveryReceptionist> with InitMixin<FoodDeliveryReceptionist> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<Store<AppState>>(
@@ -27,7 +27,7 @@ class _FoodDeliveryReceptionistState extends State<FoodDeliveryReceptionist> wit
           return StoreProvider<AppState>(
             store: store,
             child: MaterialApp(
-              title: 'Post it',
+              title: 'Food Delivery Recep',
               theme: appThemeData(context),
               routes: AppRoutes.routes,
             ),
@@ -37,10 +37,10 @@ class _FoodDeliveryReceptionistState extends State<FoodDeliveryReceptionist> wit
           throw snapshot.error!;
         }
 
-        return MaterialApp(
-          title: 'Post it',
+        return const MaterialApp(
+          title: 'Food Delivery Recep',
 //          theme: ThemeData.dark(),
-          home: const Scaffold(
+          home: Scaffold(
             body: Center(child: CircularProgressIndicator()),
           ),
         );

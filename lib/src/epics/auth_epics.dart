@@ -11,6 +11,7 @@ class AuthEpics {
   final AuthApi _api;
 
   Epic<AppState> get epics => combineEpics(<Epic<AppState>>[
+        TypedEpic<AppState, InitializeApp$>(_initializeApp),
         TypedEpic<AppState, Login$>(_login),
       ]);
 
@@ -21,5 +22,13 @@ class AuthEpics {
             .map((EmployeeUser user) => Login.successful(user))
             .onErrorReturnWith((dynamic error) => Login.error(error))
             .doOnData(action.response));
+  }
+
+  Stream<AppAction> _initializeApp(Stream<InitializeApp$> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((InitializeApp$ action) => Stream<InitializeApp$>.value(action)
+        .asyncMap((InitializeApp$ action) => _api.initializeApp())
+        .map((EmployeeUser user) => InitializeApp.successful(user))
+        .onErrorReturnWith((dynamic error) => InitializeApp.error(error)));
   }
 }
