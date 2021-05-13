@@ -7,7 +7,14 @@ class OrdersApi {
   final FirebaseFirestore _firestore;
 
   Stream<List<Order>> getNewOrders({required String companyId}) {
-    return _firestore.collection('companies/$companyId/orders').snapshots().map((QuerySnapshot snapshot) =>
-        snapshot.docs.map((QueryDocumentSnapshot doc) => Order.fromJson(doc.data())).toList());
+    return _firestore
+        .collection('companies/$companyId/orders')
+        .where('status', isEqualTo: 'pending') //
+        .snapshots()
+        .map((QuerySnapshot snapshot) =>
+            snapshot.docs.map((QueryDocumentSnapshot doc) {
+              print(doc.data());
+              return Order.fromJson(doc.data());
+            }).toList());
   }
 }

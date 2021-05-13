@@ -11,6 +11,7 @@ import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
 Future<Store<AppState>> init() async {
+
   await Firebase.initializeApp();
 
   final AuthApi _authApi = AuthApi(auth: FirebaseAuth.instance, firestore: FirebaseFirestore.instance);

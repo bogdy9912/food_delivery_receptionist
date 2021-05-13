@@ -6,7 +6,7 @@ abstract class OrdersState implements Built<OrdersState, OrdersStateBuilder> {
 
   OrdersState._();
 
-  BuiltList<Order> get order;
+  BuiltMap<String, Order> get order;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 

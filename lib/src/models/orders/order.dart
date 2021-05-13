@@ -16,14 +16,18 @@ abstract class Order implements Built<Order, OrderBuilder> {
 
   BuiltList<CartItem> get products;
 
-  double get total;
+//  double get total;
 
-  PaymentMethod get methodOfPayment;
+  PaymentMethod? get methodOfPayment;
 
   String get date;
 
 
   String? get instructions;
+
+  StatusOrder get status;
+
+  String? get review;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 

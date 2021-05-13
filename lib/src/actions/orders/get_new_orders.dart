@@ -4,7 +4,7 @@ part of orders_actions;
 abstract class GetNewOrders with _$GetNewOrders implements AppAction {
   const factory GetNewOrders({required String companyId}) = GetNewOrders$;
 
-  const factory GetNewOrders.successful(List<Order> orders) = GetNewOrdersSuccessful;
+  const factory GetNewOrders.successful(Map<String, Order> orders) = GetNewOrdersSuccessful;
 
   const factory GetNewOrders.event() = GetNewOrdersEvent;
 

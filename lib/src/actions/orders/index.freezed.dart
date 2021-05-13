@@ -22,7 +22,7 @@ class _$GetNewOrdersTearOff {
     );
   }
 
-  GetNewOrdersSuccessful successful(List<Order> orders) {
+  GetNewOrdersSuccessful successful(Map<String, Order> orders) {
     return GetNewOrdersSuccessful(
       orders,
     );
@@ -47,7 +47,7 @@ mixin _$GetNewOrders {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String companyId) $default, {
-    required TResult Function(List<Order> orders) successful,
+    required TResult Function(Map<String, Order> orders) successful,
     required TResult Function() event,
     required TResult Function(Object error) error,
   }) =>
@@ -55,7 +55,7 @@ mixin _$GetNewOrders {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String companyId)? $default, {
-    TResult Function(List<Order> orders)? successful,
+    TResult Function(Map<String, Order> orders)? successful,
     TResult Function()? event,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -161,7 +161,7 @@ class _$GetNewOrders$ implements GetNewOrders$ {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String companyId) $default, {
-    required TResult Function(List<Order> orders) successful,
+    required TResult Function(Map<String, Order> orders) successful,
     required TResult Function() event,
     required TResult Function(Object error) error,
   }) {
@@ -172,7 +172,7 @@ class _$GetNewOrders$ implements GetNewOrders$ {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String companyId)? $default, {
-    TResult Function(List<Order> orders)? successful,
+    TResult Function(Map<String, Order> orders)? successful,
     TResult Function()? event,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -224,7 +224,7 @@ abstract class $GetNewOrdersSuccessfulCopyWith<$Res> {
   factory $GetNewOrdersSuccessfulCopyWith(GetNewOrdersSuccessful value,
           $Res Function(GetNewOrdersSuccessful) then) =
       _$GetNewOrdersSuccessfulCopyWithImpl<$Res>;
-  $Res call({List<Order> orders});
+  $Res call({Map<String, Order> orders});
 }
 
 /// @nodoc
@@ -246,7 +246,7 @@ class _$GetNewOrdersSuccessfulCopyWithImpl<$Res>
       orders == freezed
           ? _value.orders
           : orders // ignore: cast_nullable_to_non_nullable
-              as List<Order>,
+              as Map<String, Order>,
     ));
   }
 }
@@ -256,7 +256,7 @@ class _$GetNewOrdersSuccessful implements GetNewOrdersSuccessful {
   const _$GetNewOrdersSuccessful(this.orders);
 
   @override
-  final List<Order> orders;
+  final Map<String, Order> orders;
 
   @override
   String toString() {
@@ -285,7 +285,7 @@ class _$GetNewOrdersSuccessful implements GetNewOrdersSuccessful {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String companyId) $default, {
-    required TResult Function(List<Order> orders) successful,
+    required TResult Function(Map<String, Order> orders) successful,
     required TResult Function() event,
     required TResult Function(Object error) error,
   }) {
@@ -296,7 +296,7 @@ class _$GetNewOrdersSuccessful implements GetNewOrdersSuccessful {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String companyId)? $default, {
-    TResult Function(List<Order> orders)? successful,
+    TResult Function(Map<String, Order> orders)? successful,
     TResult Function()? event,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -335,10 +335,10 @@ class _$GetNewOrdersSuccessful implements GetNewOrdersSuccessful {
 }
 
 abstract class GetNewOrdersSuccessful implements GetNewOrders {
-  const factory GetNewOrdersSuccessful(List<Order> orders) =
+  const factory GetNewOrdersSuccessful(Map<String, Order> orders) =
       _$GetNewOrdersSuccessful;
 
-  List<Order> get orders => throw _privateConstructorUsedError;
+  Map<String, Order> get orders => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GetNewOrdersSuccessfulCopyWith<GetNewOrdersSuccessful> get copyWith =>
       throw _privateConstructorUsedError;
@@ -384,7 +384,7 @@ class _$GetNewOrdersEvent implements GetNewOrdersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String companyId) $default, {
-    required TResult Function(List<Order> orders) successful,
+    required TResult Function(Map<String, Order> orders) successful,
     required TResult Function() event,
     required TResult Function(Object error) error,
   }) {
@@ -395,7 +395,7 @@ class _$GetNewOrdersEvent implements GetNewOrdersEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String companyId)? $default, {
-    TResult Function(List<Order> orders)? successful,
+    TResult Function(Map<String, Order> orders)? successful,
     TResult Function()? event,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -504,7 +504,7 @@ class _$GetNewOrdersError implements GetNewOrdersError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String companyId) $default, {
-    required TResult Function(List<Order> orders) successful,
+    required TResult Function(Map<String, Order> orders) successful,
     required TResult Function() event,
     required TResult Function(Object error) error,
   }) {
@@ -515,7 +515,7 @@ class _$GetNewOrdersError implements GetNewOrdersError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String companyId)? $default, {
-    TResult Function(List<Order> orders)? successful,
+    TResult Function(Map<String, Order> orders)? successful,
     TResult Function()? event,
     TResult Function(Object error)? error,
     required TResult orElse(),

@@ -8,5 +8,6 @@ Reducer<OrdersState> ordersReducer = combineReducers(<Reducer<OrdersState>>[
 ]);
 
 OrdersState _getNewOrdersSuccessful(OrdersState state, GetNewOrdersSuccessful action) {
-  return state.rebuild((OrdersStateBuilder b) => b.order = ListBuilder<Order>(action.orders));
+  print('reducer: ${action.orders}');
+  return state.rebuild((OrdersStateBuilder b) => b.order = MapBuilder<String, Order>(action.orders));
 }
