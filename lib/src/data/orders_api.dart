@@ -12,9 +12,6 @@ class OrdersApi {
         .where('status', isEqualTo: 'pending') //
         .snapshots()
         .map((QuerySnapshot snapshot) =>
-            snapshot.docs.map((QueryDocumentSnapshot doc) {
-              print(doc.data());
-              return Order.fromJson(doc.data());
-            }).toList());
+            snapshot.docs.map((QueryDocumentSnapshot doc) => Order.fromJson(doc.data())).toList());
   }
 }

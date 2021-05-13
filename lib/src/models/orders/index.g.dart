@@ -58,6 +58,12 @@ class _$OrderSerializer implements StructuredSerializer<Order> {
       serializers.serialize(object.products,
           specifiedType:
               const FullType(BuiltList, const [const FullType(CartItem)])),
+      'total',
+      serializers.serialize(object.total,
+          specifiedType: const FullType(double)),
+      'methodOfPayment',
+      serializers.serialize(object.methodOfPayment,
+          specifiedType: const FullType(PaymentMethod)),
       'date',
       serializers.serialize(object.date, specifiedType: const FullType(String)),
       'status',
@@ -65,13 +71,6 @@ class _$OrderSerializer implements StructuredSerializer<Order> {
           specifiedType: const FullType(StatusOrder)),
     ];
     Object? value;
-    value = object.methodOfPayment;
-    if (value != null) {
-      result
-        ..add('methodOfPayment')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(PaymentMethod)));
-    }
     value = object.instructions;
     if (value != null) {
       result
@@ -121,6 +120,10 @@ class _$OrderSerializer implements StructuredSerializer<Order> {
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(CartItem)]))!
               as BuiltList<Object>);
+          break;
+        case 'total':
+          result.total = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double;
           break;
         case 'methodOfPayment':
           result.methodOfPayment = serializers.deserialize(value,
@@ -369,7 +372,9 @@ class _$Order extends Order {
   @override
   final BuiltList<CartItem> products;
   @override
-  final PaymentMethod? methodOfPayment;
+  final double total;
+  @override
+  final PaymentMethod methodOfPayment;
   @override
   final String date;
   @override
@@ -388,7 +393,8 @@ class _$Order extends Order {
       required this.companyId,
       required this.address,
       required this.products,
-      this.methodOfPayment,
+      required this.total,
+      required this.methodOfPayment,
       required this.date,
       this.instructions,
       required this.status,
@@ -399,6 +405,9 @@ class _$Order extends Order {
     BuiltValueNullFieldError.checkNotNull(companyId, 'Order', 'companyId');
     BuiltValueNullFieldError.checkNotNull(address, 'Order', 'address');
     BuiltValueNullFieldError.checkNotNull(products, 'Order', 'products');
+    BuiltValueNullFieldError.checkNotNull(total, 'Order', 'total');
+    BuiltValueNullFieldError.checkNotNull(
+        methodOfPayment, 'Order', 'methodOfPayment');
     BuiltValueNullFieldError.checkNotNull(date, 'Order', 'date');
     BuiltValueNullFieldError.checkNotNull(status, 'Order', 'status');
   }
@@ -419,6 +428,7 @@ class _$Order extends Order {
         companyId == other.companyId &&
         address == other.address &&
         products == other.products &&
+        total == other.total &&
         methodOfPayment == other.methodOfPayment &&
         date == other.date &&
         instructions == other.instructions &&
@@ -435,10 +445,12 @@ class _$Order extends Order {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc($jc(0, id.hashCode), uid.hashCode),
-                                    companyId.hashCode),
-                                address.hashCode),
-                            products.hashCode),
+                                $jc(
+                                    $jc($jc($jc(0, id.hashCode), uid.hashCode),
+                                        companyId.hashCode),
+                                    address.hashCode),
+                                products.hashCode),
+                            total.hashCode),
                         methodOfPayment.hashCode),
                     date.hashCode),
                 instructions.hashCode),
@@ -454,6 +466,7 @@ class _$Order extends Order {
           ..add('companyId', companyId)
           ..add('address', address)
           ..add('products', products)
+          ..add('total', total)
           ..add('methodOfPayment', methodOfPayment)
           ..add('date', date)
           ..add('instructions', instructions)
@@ -488,6 +501,10 @@ class OrderBuilder implements Builder<Order, OrderBuilder> {
       _$this._products ??= new ListBuilder<CartItem>();
   set products(ListBuilder<CartItem>? products) => _$this._products = products;
 
+  double? _total;
+  double? get total => _$this._total;
+  set total(double? total) => _$this._total = total;
+
   PaymentMethod? _methodOfPayment;
   PaymentMethod? get methodOfPayment => _$this._methodOfPayment;
   set methodOfPayment(PaymentMethod? methodOfPayment) =>
@@ -519,6 +536,7 @@ class OrderBuilder implements Builder<Order, OrderBuilder> {
       _companyId = $v.companyId;
       _address = $v.address.toBuilder();
       _products = $v.products.toBuilder();
+      _total = $v.total;
       _methodOfPayment = $v.methodOfPayment;
       _date = $v.date;
       _instructions = $v.instructions;
@@ -552,7 +570,10 @@ class OrderBuilder implements Builder<Order, OrderBuilder> {
                   companyId, 'Order', 'companyId'),
               address: address.build(),
               products: products.build(),
-              methodOfPayment: methodOfPayment,
+              total: BuiltValueNullFieldError.checkNotNull(
+                  total, 'Order', 'total'),
+              methodOfPayment: BuiltValueNullFieldError.checkNotNull(
+                  methodOfPayment, 'Order', 'methodOfPayment'),
               date:
                   BuiltValueNullFieldError.checkNotNull(date, 'Order', 'date'),
               instructions: instructions,

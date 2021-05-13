@@ -20,18 +20,19 @@ class Homepage extends StatelessWidget {
         ],
       ),
       body: PendingOrdersContainer(
-        builder: (BuildContext context, Map<String, Order> orders) => ListView.builder(
-          itemCount: orders.length,
-          itemBuilder: (BuildContext context, int index) => Container(
+        builder: (BuildContext context, Map<String, Order> orders) {
+          final List<Order> sortedOrdersList = orders.values.toList();
+          sortedOrdersList.sort((Order a, Order b) => a.date.compareTo(b.date));
+          return Container(
             color: Colors.blue,
-            width: 100,
+            width: double.infinity,
             height: 100,
             child: Text(
-              orders.values.toList()[index].id,
+              sortedOrdersList[0].date,
               style: const TextStyle(color: Colors.red),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
