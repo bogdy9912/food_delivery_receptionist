@@ -1075,3 +1075,1136 @@ abstract class UpdateStatusOrderError
   $UpdateStatusOrderErrorCopyWith<UpdateStatusOrderError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$GetInProcessOrdersTearOff {
+  const _$GetInProcessOrdersTearOff();
+
+  GetInProcessOrders$ call({required String companyId}) {
+    return GetInProcessOrders$(
+      companyId: companyId,
+    );
+  }
+
+  GetInProcessOrdersSuccessful successful(Map<String, Order> orders) {
+    return GetInProcessOrdersSuccessful(
+      orders,
+    );
+  }
+
+  GetInProcessOrdersEvent event() {
+    return const GetInProcessOrdersEvent();
+  }
+
+  GetInProcessOrdersError error(Object error) {
+    return GetInProcessOrdersError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+const $GetInProcessOrders = _$GetInProcessOrdersTearOff();
+
+/// @nodoc
+mixin _$GetInProcessOrders {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value) $default, {
+    required TResult Function(GetInProcessOrdersSuccessful value) successful,
+    required TResult Function(GetInProcessOrdersEvent value) event,
+    required TResult Function(GetInProcessOrdersError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value)? $default, {
+    TResult Function(GetInProcessOrdersSuccessful value)? successful,
+    TResult Function(GetInProcessOrdersEvent value)? event,
+    TResult Function(GetInProcessOrdersError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetInProcessOrdersCopyWith<$Res> {
+  factory $GetInProcessOrdersCopyWith(
+          GetInProcessOrders value, $Res Function(GetInProcessOrders) then) =
+      _$GetInProcessOrdersCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetInProcessOrdersCopyWithImpl<$Res>
+    implements $GetInProcessOrdersCopyWith<$Res> {
+  _$GetInProcessOrdersCopyWithImpl(this._value, this._then);
+
+  final GetInProcessOrders _value;
+  // ignore: unused_field
+  final $Res Function(GetInProcessOrders) _then;
+}
+
+/// @nodoc
+abstract class $GetInProcessOrders$CopyWith<$Res> {
+  factory $GetInProcessOrders$CopyWith(
+          GetInProcessOrders$ value, $Res Function(GetInProcessOrders$) then) =
+      _$GetInProcessOrders$CopyWithImpl<$Res>;
+  $Res call({String companyId});
+}
+
+/// @nodoc
+class _$GetInProcessOrders$CopyWithImpl<$Res>
+    extends _$GetInProcessOrdersCopyWithImpl<$Res>
+    implements $GetInProcessOrders$CopyWith<$Res> {
+  _$GetInProcessOrders$CopyWithImpl(
+      GetInProcessOrders$ _value, $Res Function(GetInProcessOrders$) _then)
+      : super(_value, (v) => _then(v as GetInProcessOrders$));
+
+  @override
+  GetInProcessOrders$ get _value => super._value as GetInProcessOrders$;
+
+  @override
+  $Res call({
+    Object? companyId = freezed,
+  }) {
+    return _then(GetInProcessOrders$(
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$GetInProcessOrders$ implements GetInProcessOrders$ {
+  const _$GetInProcessOrders$({required this.companyId});
+
+  @override
+  final String companyId;
+
+  @override
+  String toString() {
+    return 'GetInProcessOrders(companyId: $companyId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetInProcessOrders$ &&
+            (identical(other.companyId, companyId) ||
+                const DeepCollectionEquality()
+                    .equals(other.companyId, companyId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(companyId);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetInProcessOrders$CopyWith<GetInProcessOrders$> get copyWith =>
+      _$GetInProcessOrders$CopyWithImpl<GetInProcessOrders$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) {
+    return $default(companyId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(companyId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value) $default, {
+    required TResult Function(GetInProcessOrdersSuccessful value) successful,
+    required TResult Function(GetInProcessOrdersEvent value) event,
+    required TResult Function(GetInProcessOrdersError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value)? $default, {
+    TResult Function(GetInProcessOrdersSuccessful value)? successful,
+    TResult Function(GetInProcessOrdersEvent value)? event,
+    TResult Function(GetInProcessOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetInProcessOrders$ implements GetInProcessOrders {
+  const factory GetInProcessOrders$({required String companyId}) =
+      _$GetInProcessOrders$;
+
+  String get companyId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetInProcessOrders$CopyWith<GetInProcessOrders$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetInProcessOrdersSuccessfulCopyWith<$Res> {
+  factory $GetInProcessOrdersSuccessfulCopyWith(
+          GetInProcessOrdersSuccessful value,
+          $Res Function(GetInProcessOrdersSuccessful) then) =
+      _$GetInProcessOrdersSuccessfulCopyWithImpl<$Res>;
+  $Res call({Map<String, Order> orders});
+}
+
+/// @nodoc
+class _$GetInProcessOrdersSuccessfulCopyWithImpl<$Res>
+    extends _$GetInProcessOrdersCopyWithImpl<$Res>
+    implements $GetInProcessOrdersSuccessfulCopyWith<$Res> {
+  _$GetInProcessOrdersSuccessfulCopyWithImpl(
+      GetInProcessOrdersSuccessful _value,
+      $Res Function(GetInProcessOrdersSuccessful) _then)
+      : super(_value, (v) => _then(v as GetInProcessOrdersSuccessful));
+
+  @override
+  GetInProcessOrdersSuccessful get _value =>
+      super._value as GetInProcessOrdersSuccessful;
+
+  @override
+  $Res call({
+    Object? orders = freezed,
+  }) {
+    return _then(GetInProcessOrdersSuccessful(
+      orders == freezed
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as Map<String, Order>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$GetInProcessOrdersSuccessful implements GetInProcessOrdersSuccessful {
+  const _$GetInProcessOrdersSuccessful(this.orders);
+
+  @override
+  final Map<String, Order> orders;
+
+  @override
+  String toString() {
+    return 'GetInProcessOrders.successful(orders: $orders)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetInProcessOrdersSuccessful &&
+            (identical(other.orders, orders) ||
+                const DeepCollectionEquality().equals(other.orders, orders)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(orders);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetInProcessOrdersSuccessfulCopyWith<GetInProcessOrdersSuccessful>
+      get copyWith => _$GetInProcessOrdersSuccessfulCopyWithImpl<
+          GetInProcessOrdersSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) {
+    return successful(orders);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(orders);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value) $default, {
+    required TResult Function(GetInProcessOrdersSuccessful value) successful,
+    required TResult Function(GetInProcessOrdersEvent value) event,
+    required TResult Function(GetInProcessOrdersError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value)? $default, {
+    TResult Function(GetInProcessOrdersSuccessful value)? successful,
+    TResult Function(GetInProcessOrdersEvent value)? event,
+    TResult Function(GetInProcessOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetInProcessOrdersSuccessful implements GetInProcessOrders {
+  const factory GetInProcessOrdersSuccessful(Map<String, Order> orders) =
+      _$GetInProcessOrdersSuccessful;
+
+  Map<String, Order> get orders => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetInProcessOrdersSuccessfulCopyWith<GetInProcessOrdersSuccessful>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetInProcessOrdersEventCopyWith<$Res> {
+  factory $GetInProcessOrdersEventCopyWith(GetInProcessOrdersEvent value,
+          $Res Function(GetInProcessOrdersEvent) then) =
+      _$GetInProcessOrdersEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetInProcessOrdersEventCopyWithImpl<$Res>
+    extends _$GetInProcessOrdersCopyWithImpl<$Res>
+    implements $GetInProcessOrdersEventCopyWith<$Res> {
+  _$GetInProcessOrdersEventCopyWithImpl(GetInProcessOrdersEvent _value,
+      $Res Function(GetInProcessOrdersEvent) _then)
+      : super(_value, (v) => _then(v as GetInProcessOrdersEvent));
+
+  @override
+  GetInProcessOrdersEvent get _value => super._value as GetInProcessOrdersEvent;
+}
+
+/// @nodoc
+class _$GetInProcessOrdersEvent implements GetInProcessOrdersEvent {
+  const _$GetInProcessOrdersEvent();
+
+  @override
+  String toString() {
+    return 'GetInProcessOrders.event()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GetInProcessOrdersEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) {
+    return event();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (event != null) {
+      return event();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value) $default, {
+    required TResult Function(GetInProcessOrdersSuccessful value) successful,
+    required TResult Function(GetInProcessOrdersEvent value) event,
+    required TResult Function(GetInProcessOrdersError value) error,
+  }) {
+    return event(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value)? $default, {
+    TResult Function(GetInProcessOrdersSuccessful value)? successful,
+    TResult Function(GetInProcessOrdersEvent value)? event,
+    TResult Function(GetInProcessOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (event != null) {
+      return event(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetInProcessOrdersEvent implements GetInProcessOrders {
+  const factory GetInProcessOrdersEvent() = _$GetInProcessOrdersEvent;
+}
+
+/// @nodoc
+abstract class $GetInProcessOrdersErrorCopyWith<$Res> {
+  factory $GetInProcessOrdersErrorCopyWith(GetInProcessOrdersError value,
+          $Res Function(GetInProcessOrdersError) then) =
+      _$GetInProcessOrdersErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$GetInProcessOrdersErrorCopyWithImpl<$Res>
+    extends _$GetInProcessOrdersCopyWithImpl<$Res>
+    implements $GetInProcessOrdersErrorCopyWith<$Res> {
+  _$GetInProcessOrdersErrorCopyWithImpl(GetInProcessOrdersError _value,
+      $Res Function(GetInProcessOrdersError) _then)
+      : super(_value, (v) => _then(v as GetInProcessOrdersError));
+
+  @override
+  GetInProcessOrdersError get _value => super._value as GetInProcessOrdersError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(GetInProcessOrdersError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+    ));
+  }
+}
+
+@Implements(ErrorAction)
+
+/// @nodoc
+class _$GetInProcessOrdersError implements GetInProcessOrdersError {
+  const _$GetInProcessOrdersError(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'GetInProcessOrders.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetInProcessOrdersError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetInProcessOrdersErrorCopyWith<GetInProcessOrdersError> get copyWith =>
+      _$GetInProcessOrdersErrorCopyWithImpl<GetInProcessOrdersError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value) $default, {
+    required TResult Function(GetInProcessOrdersSuccessful value) successful,
+    required TResult Function(GetInProcessOrdersEvent value) event,
+    required TResult Function(GetInProcessOrdersError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetInProcessOrders$ value)? $default, {
+    TResult Function(GetInProcessOrdersSuccessful value)? successful,
+    TResult Function(GetInProcessOrdersEvent value)? event,
+    TResult Function(GetInProcessOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetInProcessOrdersError
+    implements GetInProcessOrders, ErrorAction {
+  const factory GetInProcessOrdersError(Object error) =
+      _$GetInProcessOrdersError;
+
+  Object get error => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetInProcessOrdersErrorCopyWith<GetInProcessOrdersError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$GetDoneProcessingOrdersTearOff {
+  const _$GetDoneProcessingOrdersTearOff();
+
+  GetDoneProcessingOrders$ call({required String companyId}) {
+    return GetDoneProcessingOrders$(
+      companyId: companyId,
+    );
+  }
+
+  GetDoneProcessingOrdersSuccessful successful(Map<String, Order> orders) {
+    return GetDoneProcessingOrdersSuccessful(
+      orders,
+    );
+  }
+
+  GetDoneProcessingOrdersEvent event() {
+    return const GetDoneProcessingOrdersEvent();
+  }
+
+  GetDoneProcessingOrdersError error(Object error) {
+    return GetDoneProcessingOrdersError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+const $GetDoneProcessingOrders = _$GetDoneProcessingOrdersTearOff();
+
+/// @nodoc
+mixin _$GetDoneProcessingOrders {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value) $default, {
+    required TResult Function(GetDoneProcessingOrdersSuccessful value)
+        successful,
+    required TResult Function(GetDoneProcessingOrdersEvent value) event,
+    required TResult Function(GetDoneProcessingOrdersError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value)? $default, {
+    TResult Function(GetDoneProcessingOrdersSuccessful value)? successful,
+    TResult Function(GetDoneProcessingOrdersEvent value)? event,
+    TResult Function(GetDoneProcessingOrdersError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetDoneProcessingOrdersCopyWith<$Res> {
+  factory $GetDoneProcessingOrdersCopyWith(GetDoneProcessingOrders value,
+          $Res Function(GetDoneProcessingOrders) then) =
+      _$GetDoneProcessingOrdersCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetDoneProcessingOrdersCopyWithImpl<$Res>
+    implements $GetDoneProcessingOrdersCopyWith<$Res> {
+  _$GetDoneProcessingOrdersCopyWithImpl(this._value, this._then);
+
+  final GetDoneProcessingOrders _value;
+  // ignore: unused_field
+  final $Res Function(GetDoneProcessingOrders) _then;
+}
+
+/// @nodoc
+abstract class $GetDoneProcessingOrders$CopyWith<$Res> {
+  factory $GetDoneProcessingOrders$CopyWith(GetDoneProcessingOrders$ value,
+          $Res Function(GetDoneProcessingOrders$) then) =
+      _$GetDoneProcessingOrders$CopyWithImpl<$Res>;
+  $Res call({String companyId});
+}
+
+/// @nodoc
+class _$GetDoneProcessingOrders$CopyWithImpl<$Res>
+    extends _$GetDoneProcessingOrdersCopyWithImpl<$Res>
+    implements $GetDoneProcessingOrders$CopyWith<$Res> {
+  _$GetDoneProcessingOrders$CopyWithImpl(GetDoneProcessingOrders$ _value,
+      $Res Function(GetDoneProcessingOrders$) _then)
+      : super(_value, (v) => _then(v as GetDoneProcessingOrders$));
+
+  @override
+  GetDoneProcessingOrders$ get _value =>
+      super._value as GetDoneProcessingOrders$;
+
+  @override
+  $Res call({
+    Object? companyId = freezed,
+  }) {
+    return _then(GetDoneProcessingOrders$(
+      companyId: companyId == freezed
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$GetDoneProcessingOrders$ implements GetDoneProcessingOrders$ {
+  const _$GetDoneProcessingOrders$({required this.companyId});
+
+  @override
+  final String companyId;
+
+  @override
+  String toString() {
+    return 'GetDoneProcessingOrders(companyId: $companyId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetDoneProcessingOrders$ &&
+            (identical(other.companyId, companyId) ||
+                const DeepCollectionEquality()
+                    .equals(other.companyId, companyId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(companyId);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetDoneProcessingOrders$CopyWith<GetDoneProcessingOrders$> get copyWith =>
+      _$GetDoneProcessingOrders$CopyWithImpl<GetDoneProcessingOrders$>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) {
+    return $default(companyId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(companyId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value) $default, {
+    required TResult Function(GetDoneProcessingOrdersSuccessful value)
+        successful,
+    required TResult Function(GetDoneProcessingOrdersEvent value) event,
+    required TResult Function(GetDoneProcessingOrdersError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value)? $default, {
+    TResult Function(GetDoneProcessingOrdersSuccessful value)? successful,
+    TResult Function(GetDoneProcessingOrdersEvent value)? event,
+    TResult Function(GetDoneProcessingOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDoneProcessingOrders$ implements GetDoneProcessingOrders {
+  const factory GetDoneProcessingOrders$({required String companyId}) =
+      _$GetDoneProcessingOrders$;
+
+  String get companyId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetDoneProcessingOrders$CopyWith<GetDoneProcessingOrders$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetDoneProcessingOrdersSuccessfulCopyWith<$Res> {
+  factory $GetDoneProcessingOrdersSuccessfulCopyWith(
+          GetDoneProcessingOrdersSuccessful value,
+          $Res Function(GetDoneProcessingOrdersSuccessful) then) =
+      _$GetDoneProcessingOrdersSuccessfulCopyWithImpl<$Res>;
+  $Res call({Map<String, Order> orders});
+}
+
+/// @nodoc
+class _$GetDoneProcessingOrdersSuccessfulCopyWithImpl<$Res>
+    extends _$GetDoneProcessingOrdersCopyWithImpl<$Res>
+    implements $GetDoneProcessingOrdersSuccessfulCopyWith<$Res> {
+  _$GetDoneProcessingOrdersSuccessfulCopyWithImpl(
+      GetDoneProcessingOrdersSuccessful _value,
+      $Res Function(GetDoneProcessingOrdersSuccessful) _then)
+      : super(_value, (v) => _then(v as GetDoneProcessingOrdersSuccessful));
+
+  @override
+  GetDoneProcessingOrdersSuccessful get _value =>
+      super._value as GetDoneProcessingOrdersSuccessful;
+
+  @override
+  $Res call({
+    Object? orders = freezed,
+  }) {
+    return _then(GetDoneProcessingOrdersSuccessful(
+      orders == freezed
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as Map<String, Order>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$GetDoneProcessingOrdersSuccessful
+    implements GetDoneProcessingOrdersSuccessful {
+  const _$GetDoneProcessingOrdersSuccessful(this.orders);
+
+  @override
+  final Map<String, Order> orders;
+
+  @override
+  String toString() {
+    return 'GetDoneProcessingOrders.successful(orders: $orders)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetDoneProcessingOrdersSuccessful &&
+            (identical(other.orders, orders) ||
+                const DeepCollectionEquality().equals(other.orders, orders)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(orders);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetDoneProcessingOrdersSuccessfulCopyWith<GetDoneProcessingOrdersSuccessful>
+      get copyWith => _$GetDoneProcessingOrdersSuccessfulCopyWithImpl<
+          GetDoneProcessingOrdersSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) {
+    return successful(orders);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(orders);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value) $default, {
+    required TResult Function(GetDoneProcessingOrdersSuccessful value)
+        successful,
+    required TResult Function(GetDoneProcessingOrdersEvent value) event,
+    required TResult Function(GetDoneProcessingOrdersError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value)? $default, {
+    TResult Function(GetDoneProcessingOrdersSuccessful value)? successful,
+    TResult Function(GetDoneProcessingOrdersEvent value)? event,
+    TResult Function(GetDoneProcessingOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDoneProcessingOrdersSuccessful
+    implements GetDoneProcessingOrders {
+  const factory GetDoneProcessingOrdersSuccessful(Map<String, Order> orders) =
+      _$GetDoneProcessingOrdersSuccessful;
+
+  Map<String, Order> get orders => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetDoneProcessingOrdersSuccessfulCopyWith<GetDoneProcessingOrdersSuccessful>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetDoneProcessingOrdersEventCopyWith<$Res> {
+  factory $GetDoneProcessingOrdersEventCopyWith(
+          GetDoneProcessingOrdersEvent value,
+          $Res Function(GetDoneProcessingOrdersEvent) then) =
+      _$GetDoneProcessingOrdersEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetDoneProcessingOrdersEventCopyWithImpl<$Res>
+    extends _$GetDoneProcessingOrdersCopyWithImpl<$Res>
+    implements $GetDoneProcessingOrdersEventCopyWith<$Res> {
+  _$GetDoneProcessingOrdersEventCopyWithImpl(
+      GetDoneProcessingOrdersEvent _value,
+      $Res Function(GetDoneProcessingOrdersEvent) _then)
+      : super(_value, (v) => _then(v as GetDoneProcessingOrdersEvent));
+
+  @override
+  GetDoneProcessingOrdersEvent get _value =>
+      super._value as GetDoneProcessingOrdersEvent;
+}
+
+/// @nodoc
+class _$GetDoneProcessingOrdersEvent implements GetDoneProcessingOrdersEvent {
+  const _$GetDoneProcessingOrdersEvent();
+
+  @override
+  String toString() {
+    return 'GetDoneProcessingOrders.event()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GetDoneProcessingOrdersEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) {
+    return event();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (event != null) {
+      return event();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value) $default, {
+    required TResult Function(GetDoneProcessingOrdersSuccessful value)
+        successful,
+    required TResult Function(GetDoneProcessingOrdersEvent value) event,
+    required TResult Function(GetDoneProcessingOrdersError value) error,
+  }) {
+    return event(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value)? $default, {
+    TResult Function(GetDoneProcessingOrdersSuccessful value)? successful,
+    TResult Function(GetDoneProcessingOrdersEvent value)? event,
+    TResult Function(GetDoneProcessingOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (event != null) {
+      return event(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDoneProcessingOrdersEvent implements GetDoneProcessingOrders {
+  const factory GetDoneProcessingOrdersEvent() = _$GetDoneProcessingOrdersEvent;
+}
+
+/// @nodoc
+abstract class $GetDoneProcessingOrdersErrorCopyWith<$Res> {
+  factory $GetDoneProcessingOrdersErrorCopyWith(
+          GetDoneProcessingOrdersError value,
+          $Res Function(GetDoneProcessingOrdersError) then) =
+      _$GetDoneProcessingOrdersErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$GetDoneProcessingOrdersErrorCopyWithImpl<$Res>
+    extends _$GetDoneProcessingOrdersCopyWithImpl<$Res>
+    implements $GetDoneProcessingOrdersErrorCopyWith<$Res> {
+  _$GetDoneProcessingOrdersErrorCopyWithImpl(
+      GetDoneProcessingOrdersError _value,
+      $Res Function(GetDoneProcessingOrdersError) _then)
+      : super(_value, (v) => _then(v as GetDoneProcessingOrdersError));
+
+  @override
+  GetDoneProcessingOrdersError get _value =>
+      super._value as GetDoneProcessingOrdersError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(GetDoneProcessingOrdersError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+    ));
+  }
+}
+
+@Implements(ErrorAction)
+
+/// @nodoc
+class _$GetDoneProcessingOrdersError implements GetDoneProcessingOrdersError {
+  const _$GetDoneProcessingOrdersError(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'GetDoneProcessingOrders.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetDoneProcessingOrdersError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetDoneProcessingOrdersErrorCopyWith<GetDoneProcessingOrdersError>
+      get copyWith => _$GetDoneProcessingOrdersErrorCopyWithImpl<
+          GetDoneProcessingOrdersError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String companyId) $default, {
+    required TResult Function(Map<String, Order> orders) successful,
+    required TResult Function() event,
+    required TResult Function(Object error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String companyId)? $default, {
+    TResult Function(Map<String, Order> orders)? successful,
+    TResult Function()? event,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value) $default, {
+    required TResult Function(GetDoneProcessingOrdersSuccessful value)
+        successful,
+    required TResult Function(GetDoneProcessingOrdersEvent value) event,
+    required TResult Function(GetDoneProcessingOrdersError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetDoneProcessingOrders$ value)? $default, {
+    TResult Function(GetDoneProcessingOrdersSuccessful value)? successful,
+    TResult Function(GetDoneProcessingOrdersEvent value)? event,
+    TResult Function(GetDoneProcessingOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDoneProcessingOrdersError
+    implements GetDoneProcessingOrders, ErrorAction {
+  const factory GetDoneProcessingOrdersError(Object error) =
+      _$GetDoneProcessingOrdersError;
+
+  Object get error => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetDoneProcessingOrdersErrorCopyWith<GetDoneProcessingOrdersError>
+      get copyWith => throw _privateConstructorUsedError;
+}

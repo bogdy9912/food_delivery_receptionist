@@ -5,14 +5,23 @@ import 'package:redux/redux.dart';
 
 Reducer<OrdersState> ordersReducer = combineReducers(<Reducer<OrdersState>>[
   TypedReducer<OrdersState, GetNewOrdersSuccessful>(_getNewOrdersSuccessful),
+  TypedReducer<OrdersState, GetInProcessOrdersSuccessful>(_getInProcessOrdersSuccessful),
+  TypedReducer<OrdersState, GetDoneProcessingOrdersSuccessful>(_getDoneProcessingOrdersSuccessful),
   TypedReducer<OrdersState, UpdateStatusOrderSuccessful>(_updateStatusOrderSuccessful),
 ]);
 
 OrdersState _getNewOrdersSuccessful(OrdersState state, GetNewOrdersSuccessful action) {
-  return state.rebuild((OrdersStateBuilder b) => b.order = MapBuilder<String, Order>(action.orders));
+  return state.rebuild((OrdersStateBuilder b) => b.pendingOrders = MapBuilder<String, Order>(action.orders));
 }
 
 OrdersState _updateStatusOrderSuccessful(OrdersState state, UpdateStatusOrderSuccessful action) {
-  return state.rebuild((OrdersStateBuilder b) => b.order.update((MapBuilder<String, Order> e) =>
-      e[action.orderId]!.rebuild((OrderBuilder element) => element.status = action.newStatus)));
+  return state.rebuild((OrdersStateBuilder b) => b.pendingOrders.remove(action.orderId));
+      }
+
+OrdersState _getInProcessOrdersSuccessful(OrdersState state, GetInProcessOrdersSuccessful action) {
+  return state.rebuild((OrdersStateBuilder b) => b.inProcessOrders = MapBuilder<String, Order>(action.orders));
+}
+
+OrdersState _getDoneProcessingOrdersSuccessful(OrdersState state, GetDoneProcessingOrdersSuccessful action) {
+  return state.rebuild((OrdersStateBuilder b) => b.doneProcessingOrders = MapBuilder<String, Order>(action.orders));
 }

@@ -7,13 +7,11 @@ part of 'status_order.dart';
 // **************************************************************************
 
 const StatusOrder _$pending = const StatusOrder._('pending');
-const StatusOrder _$acceptedOrder = const StatusOrder._('acceptedOrder');
 const StatusOrder _$declinedOrder = const StatusOrder._('declinedOrder');
 const StatusOrder _$inProcess = const StatusOrder._('inProcess');
 const StatusOrder _$doneProcessing = const StatusOrder._('doneProcessing');
 const StatusOrder _$delivery = const StatusOrder._('delivery');
 const StatusOrder _$finishDelivery = const StatusOrder._('finishDelivery');
-const StatusOrder _$waitReview = const StatusOrder._('waitReview');
 const StatusOrder _$withReview = const StatusOrder._('withReview');
 const StatusOrder _$notReview = const StatusOrder._('notReview');
 
@@ -21,8 +19,6 @@ StatusOrder _$valueOf(String name) {
   switch (name) {
     case 'pending':
       return _$pending;
-    case 'acceptedOrder':
-      return _$acceptedOrder;
     case 'declinedOrder':
       return _$declinedOrder;
     case 'inProcess':
@@ -33,8 +29,6 @@ StatusOrder _$valueOf(String name) {
       return _$delivery;
     case 'finishDelivery':
       return _$finishDelivery;
-    case 'waitReview':
-      return _$waitReview;
     case 'withReview':
       return _$withReview;
     case 'notReview':
@@ -47,13 +41,11 @@ StatusOrder _$valueOf(String name) {
 final BuiltSet<StatusOrder> _$values =
     new BuiltSet<StatusOrder>(const <StatusOrder>[
   _$pending,
-  _$acceptedOrder,
   _$declinedOrder,
   _$inProcess,
   _$doneProcessing,
   _$delivery,
   _$finishDelivery,
-  _$waitReview,
   _$withReview,
   _$notReview,
 ]);

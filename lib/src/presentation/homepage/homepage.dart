@@ -35,9 +35,10 @@ class _HomepageState extends State<Homepage> {
       ),
       body: <Widget>[
         const PendingOrdersPage(),
-        AcceptedOrdersPage(),
+        const AcceptedOrdersPage(),
       ][_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: false,
         currentIndex: _selectedIndex,
         items: items,
         onTap: (int index) {

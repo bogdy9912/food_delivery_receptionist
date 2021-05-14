@@ -8,13 +8,11 @@ class StatusOrder extends EnumClass {
   const StatusOrder._(String name) : super(name);
 
   static const StatusOrder pending = _$pending;
-  static const StatusOrder acceptedOrder = _$acceptedOrder;
   static const StatusOrder declinedOrder = _$declinedOrder;
   static const StatusOrder inProcess = _$inProcess;
   static const StatusOrder doneProcessing = _$doneProcessing;
   static const StatusOrder delivery = _$delivery;
   static const StatusOrder finishDelivery = _$finishDelivery;
-  static const StatusOrder waitReview = _$waitReview;
   static const StatusOrder withReview = _$withReview;
   static const StatusOrder notReview = _$notReview;
 

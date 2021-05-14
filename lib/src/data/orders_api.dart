@@ -16,6 +16,24 @@ class OrdersApi {
             snapshot.docs.map((QueryDocumentSnapshot doc) => Order.fromJson(doc.data())).toList());
   }
 
+  Stream<List<Order>> getInProcessOrders({required String companyId}) {
+    return _firestore
+        .collection('companies/$companyId/orders')
+        .where('status', isEqualTo: 'inProcess') //
+        .snapshots()
+        .map((QuerySnapshot snapshot) =>
+            snapshot.docs.map((QueryDocumentSnapshot doc) => Order.fromJson(doc.data())).toList());
+  }
+
+  Stream<List<Order>> getDoneProcessingOrders({required String companyId}) {
+    return _firestore
+        .collection('companies/$companyId/orders')
+        .where('status', isEqualTo: 'doneProcessing') //
+        .snapshots()
+        .map((QuerySnapshot snapshot) =>
+            snapshot.docs.map((QueryDocumentSnapshot doc) => Order.fromJson(doc.data())).toList());
+  }
+
   Future<void> updateStatusOrder(
       {required String companyId, required String orderId, required StatusOrder newStatus}) async {
     await _firestore

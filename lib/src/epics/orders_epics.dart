@@ -13,6 +13,8 @@ class OrdersEpics {
 
   Epic<AppState> get epics => combineEpics(<Epic<AppState>>[
         TypedEpic<AppState, GetNewOrders$>(_getNewOrders),
+        TypedEpic<AppState, GetInProcessOrders$>(_getInProcessOrders),
+        TypedEpic<AppState, GetDoneProcessingOrders$>(_getDoneProcessingOrders),
         TypedEpic<AppState, UpdateStatusOrder$>(_updateStatusOrder),
       ]);
 
@@ -30,6 +32,38 @@ class OrdersEpics {
             })
             .takeUntil(actions.whereType<GetNewOrdersEvent>())
             .onErrorReturnWith((dynamic error) => GetNewOrders.error(error)));
+  }
+
+  Stream<AppAction> _getInProcessOrders(Stream<GetInProcessOrders$> actions, EpicStore<AppState> store) {
+    return actions //
+        .whereType<GetInProcessOrders$>()
+        .flatMap((GetInProcessOrders$ action) => Stream<GetInProcessOrders$>.value(action)
+            .flatMap((GetInProcessOrders$ action) => _api.getInProcessOrders(companyId: action.companyId))
+            .map((List<Order> orders) {
+              final Map<String, Order> mapOfResult = <String, Order>{};
+              for (final Order order in orders) {
+                mapOfResult[order.id] = order;
+              }
+              return GetInProcessOrders.successful(mapOfResult);
+            })
+            .takeUntil(actions.whereType<GetNewOrdersEvent>())
+            .onErrorReturnWith((dynamic error) => GetInProcessOrders.error(error)));
+  }
+
+  Stream<AppAction> _getDoneProcessingOrders(Stream<GetDoneProcessingOrders$> actions, EpicStore<AppState> store) {
+    return actions //
+        .whereType<GetDoneProcessingOrders$>()
+        .flatMap((GetDoneProcessingOrders$ action) => Stream<GetDoneProcessingOrders$>.value(action)
+            .flatMap((GetDoneProcessingOrders$ action) => _api.getDoneProcessingOrders(companyId: action.companyId))
+            .map((List<Order> orders) {
+              final Map<String, Order> mapOfResult = <String, Order>{};
+              for (final Order order in orders) {
+                mapOfResult[order.id] = order;
+              }
+              return GetDoneProcessingOrders.successful(mapOfResult);
+            })
+            .takeUntil(actions.whereType<GetNewOrdersEvent>())
+            .onErrorReturnWith((dynamic error) => GetDoneProcessingOrders.error(error)));
   }
 
   Stream<AppAction> _updateStatusOrder(Stream<UpdateStatusOrder$> actions, EpicStore<AppState> store) {

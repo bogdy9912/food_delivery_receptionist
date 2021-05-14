@@ -251,8 +251,16 @@ class _$OrdersStateSerializer implements StructuredSerializer<OrdersState> {
   Iterable<Object?> serialize(Serializers serializers, OrdersState object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'order',
-      serializers.serialize(object.order,
+      'pendingOrders',
+      serializers.serialize(object.pendingOrders,
+          specifiedType: const FullType(
+              BuiltMap, const [const FullType(String), const FullType(Order)])),
+      'inProcessOrders',
+      serializers.serialize(object.inProcessOrders,
+          specifiedType: const FullType(
+              BuiltMap, const [const FullType(String), const FullType(Order)])),
+      'doneProcessingOrders',
+      serializers.serialize(object.doneProcessingOrders,
           specifiedType: const FullType(
               BuiltMap, const [const FullType(String), const FullType(Order)])),
     ];
@@ -271,8 +279,18 @@ class _$OrdersStateSerializer implements StructuredSerializer<OrdersState> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'order':
-          result.order.replace(serializers.deserialize(value,
+        case 'pendingOrders':
+          result.pendingOrders.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap,
+                  const [const FullType(String), const FullType(Order)]))!);
+          break;
+        case 'inProcessOrders':
+          result.inProcessOrders.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap,
+                  const [const FullType(String), const FullType(Order)]))!);
+          break;
+        case 'doneProcessingOrders':
+          result.doneProcessingOrders.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltMap,
                   const [const FullType(String), const FullType(Order)]))!);
           break;
@@ -738,13 +756,26 @@ class AddressPointBuilder
 
 class _$OrdersState extends OrdersState {
   @override
-  final BuiltMap<String, Order> order;
+  final BuiltMap<String, Order> pendingOrders;
+  @override
+  final BuiltMap<String, Order> inProcessOrders;
+  @override
+  final BuiltMap<String, Order> doneProcessingOrders;
 
   factory _$OrdersState([void Function(OrdersStateBuilder)? updates]) =>
       (new OrdersStateBuilder()..update(updates)).build();
 
-  _$OrdersState._({required this.order}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(order, 'OrdersState', 'order');
+  _$OrdersState._(
+      {required this.pendingOrders,
+      required this.inProcessOrders,
+      required this.doneProcessingOrders})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        pendingOrders, 'OrdersState', 'pendingOrders');
+    BuiltValueNullFieldError.checkNotNull(
+        inProcessOrders, 'OrdersState', 'inProcessOrders');
+    BuiltValueNullFieldError.checkNotNull(
+        doneProcessingOrders, 'OrdersState', 'doneProcessingOrders');
   }
 
   @override
@@ -757,17 +788,25 @@ class _$OrdersState extends OrdersState {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is OrdersState && order == other.order;
+    return other is OrdersState &&
+        pendingOrders == other.pendingOrders &&
+        inProcessOrders == other.inProcessOrders &&
+        doneProcessingOrders == other.doneProcessingOrders;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(0, order.hashCode));
+    return $jf($jc(
+        $jc($jc(0, pendingOrders.hashCode), inProcessOrders.hashCode),
+        doneProcessingOrders.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('OrdersState')..add('order', order))
+    return (newBuiltValueToStringHelper('OrdersState')
+          ..add('pendingOrders', pendingOrders)
+          ..add('inProcessOrders', inProcessOrders)
+          ..add('doneProcessingOrders', doneProcessingOrders))
         .toString();
   }
 }
@@ -775,17 +814,32 @@ class _$OrdersState extends OrdersState {
 class OrdersStateBuilder implements Builder<OrdersState, OrdersStateBuilder> {
   _$OrdersState? _$v;
 
-  MapBuilder<String, Order>? _order;
-  MapBuilder<String, Order> get order =>
-      _$this._order ??= new MapBuilder<String, Order>();
-  set order(MapBuilder<String, Order>? order) => _$this._order = order;
+  MapBuilder<String, Order>? _pendingOrders;
+  MapBuilder<String, Order> get pendingOrders =>
+      _$this._pendingOrders ??= new MapBuilder<String, Order>();
+  set pendingOrders(MapBuilder<String, Order>? pendingOrders) =>
+      _$this._pendingOrders = pendingOrders;
+
+  MapBuilder<String, Order>? _inProcessOrders;
+  MapBuilder<String, Order> get inProcessOrders =>
+      _$this._inProcessOrders ??= new MapBuilder<String, Order>();
+  set inProcessOrders(MapBuilder<String, Order>? inProcessOrders) =>
+      _$this._inProcessOrders = inProcessOrders;
+
+  MapBuilder<String, Order>? _doneProcessingOrders;
+  MapBuilder<String, Order> get doneProcessingOrders =>
+      _$this._doneProcessingOrders ??= new MapBuilder<String, Order>();
+  set doneProcessingOrders(MapBuilder<String, Order>? doneProcessingOrders) =>
+      _$this._doneProcessingOrders = doneProcessingOrders;
 
   OrdersStateBuilder();
 
   OrdersStateBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _order = $v.order.toBuilder();
+      _pendingOrders = $v.pendingOrders.toBuilder();
+      _inProcessOrders = $v.inProcessOrders.toBuilder();
+      _doneProcessingOrders = $v.doneProcessingOrders.toBuilder();
       _$v = null;
     }
     return this;
@@ -806,12 +860,20 @@ class OrdersStateBuilder implements Builder<OrdersState, OrdersStateBuilder> {
   _$OrdersState build() {
     _$OrdersState _$result;
     try {
-      _$result = _$v ?? new _$OrdersState._(order: order.build());
+      _$result = _$v ??
+          new _$OrdersState._(
+              pendingOrders: pendingOrders.build(),
+              inProcessOrders: inProcessOrders.build(),
+              doneProcessingOrders: doneProcessingOrders.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'order';
-        order.build();
+        _$failedField = 'pendingOrders';
+        pendingOrders.build();
+        _$failedField = 'inProcessOrders';
+        inProcessOrders.build();
+        _$failedField = 'doneProcessingOrders';
+        doneProcessingOrders.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'OrdersState', _$failedField, e.toString());
