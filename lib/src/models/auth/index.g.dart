@@ -54,6 +54,9 @@ class _$EmployeeUserSerializer implements StructuredSerializer<EmployeeUser> {
       'lastName',
       serializers.serialize(object.lastName,
           specifiedType: const FullType(String)),
+      'companyId',
+      serializers.serialize(object.companyId,
+          specifiedType: const FullType(String)),
       'roles',
       serializers.serialize(object.roles,
           specifiedType:
@@ -93,6 +96,10 @@ class _$EmployeeUserSerializer implements StructuredSerializer<EmployeeUser> {
           break;
         case 'lastName':
           result.lastName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'companyId':
+          result.companyId = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'roles':
@@ -180,6 +187,8 @@ class _$EmployeeUser extends EmployeeUser {
   @override
   final String lastName;
   @override
+  final String companyId;
+  @override
   final BuiltList<Role> roles;
 
   factory _$EmployeeUser([void Function(EmployeeUserBuilder)? updates]) =>
@@ -191,6 +200,7 @@ class _$EmployeeUser extends EmployeeUser {
       required this.email,
       required this.firstName,
       required this.lastName,
+      required this.companyId,
       required this.roles})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, 'EmployeeUser', 'uid');
@@ -199,6 +209,8 @@ class _$EmployeeUser extends EmployeeUser {
     BuiltValueNullFieldError.checkNotNull(
         firstName, 'EmployeeUser', 'firstName');
     BuiltValueNullFieldError.checkNotNull(lastName, 'EmployeeUser', 'lastName');
+    BuiltValueNullFieldError.checkNotNull(
+        companyId, 'EmployeeUser', 'companyId');
     BuiltValueNullFieldError.checkNotNull(roles, 'EmployeeUser', 'roles');
   }
 
@@ -218,6 +230,7 @@ class _$EmployeeUser extends EmployeeUser {
         email == other.email &&
         firstName == other.firstName &&
         lastName == other.lastName &&
+        companyId == other.companyId &&
         roles == other.roles;
   }
 
@@ -226,10 +239,12 @@ class _$EmployeeUser extends EmployeeUser {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, uid.hashCode), adminId.hashCode),
-                    email.hashCode),
-                firstName.hashCode),
-            lastName.hashCode),
+                $jc(
+                    $jc($jc($jc(0, uid.hashCode), adminId.hashCode),
+                        email.hashCode),
+                    firstName.hashCode),
+                lastName.hashCode),
+            companyId.hashCode),
         roles.hashCode));
   }
 
@@ -241,6 +256,7 @@ class _$EmployeeUser extends EmployeeUser {
           ..add('email', email)
           ..add('firstName', firstName)
           ..add('lastName', lastName)
+          ..add('companyId', companyId)
           ..add('roles', roles))
         .toString();
   }
@@ -270,6 +286,10 @@ class EmployeeUserBuilder
   String? get lastName => _$this._lastName;
   set lastName(String? lastName) => _$this._lastName = lastName;
 
+  String? _companyId;
+  String? get companyId => _$this._companyId;
+  set companyId(String? companyId) => _$this._companyId = companyId;
+
   ListBuilder<Role>? _roles;
   ListBuilder<Role> get roles => _$this._roles ??= new ListBuilder<Role>();
   set roles(ListBuilder<Role>? roles) => _$this._roles = roles;
@@ -284,6 +304,7 @@ class EmployeeUserBuilder
       _email = $v.email;
       _firstName = $v.firstName;
       _lastName = $v.lastName;
+      _companyId = $v.companyId;
       _roles = $v.roles.toBuilder();
       _$v = null;
     }
@@ -317,6 +338,8 @@ class EmployeeUserBuilder
                   firstName, 'EmployeeUser', 'firstName'),
               lastName: BuiltValueNullFieldError.checkNotNull(
                   lastName, 'EmployeeUser', 'lastName'),
+              companyId: BuiltValueNullFieldError.checkNotNull(
+                  companyId, 'EmployeeUser', 'companyId'),
               roles: roles.build());
     } catch (_) {
       late String _$failedField;

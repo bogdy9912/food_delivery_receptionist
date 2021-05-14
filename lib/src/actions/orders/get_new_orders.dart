@@ -1,7 +1,7 @@
 part of orders_actions;
 
 @freezed
-abstract class GetNewOrders with _$GetNewOrders implements AppAction {
+class GetNewOrders with _$GetNewOrders implements AppAction {
   const factory GetNewOrders({required String companyId}) = GetNewOrders$;
 
   const factory GetNewOrders.successful(Map<String, Order> orders) = GetNewOrdersSuccessful;

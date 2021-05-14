@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:food_delivery_receptionist/src/models/index.dart';
 import 'package:food_delivery_receptionist/src/models/orders/index.dart';
 
 class OrdersApi {
@@ -13,5 +14,12 @@ class OrdersApi {
         .snapshots()
         .map((QuerySnapshot snapshot) =>
             snapshot.docs.map((QueryDocumentSnapshot doc) => Order.fromJson(doc.data())).toList());
+  }
+
+  Future<void> updateStatusOrder(
+      {required String companyId, required String orderId, required StatusOrder newStatus}) async {
+    await _firestore
+        .doc('companies/$companyId/orders/$orderId')
+        .update(<String, dynamic>{'status': newStatus.toString()});
   }
 }

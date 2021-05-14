@@ -561,3 +561,517 @@ abstract class GetNewOrdersError implements GetNewOrders, ErrorAction {
   $GetNewOrdersErrorCopyWith<GetNewOrdersError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$UpdateStatusOrderTearOff {
+  const _$UpdateStatusOrderTearOff();
+
+  UpdateStatusOrder$ call(
+      {required String orderId,
+      required StatusOrder newStatus,
+      required void Function(AppAction) response}) {
+    return UpdateStatusOrder$(
+      orderId: orderId,
+      newStatus: newStatus,
+      response: response,
+    );
+  }
+
+  UpdateStatusOrderSuccessful successful(
+      {required String orderId, required StatusOrder newStatus}) {
+    return UpdateStatusOrderSuccessful(
+      orderId: orderId,
+      newStatus: newStatus,
+    );
+  }
+
+  UpdateStatusOrderError error(Object error) {
+    return UpdateStatusOrderError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+const $UpdateStatusOrder = _$UpdateStatusOrderTearOff();
+
+/// @nodoc
+mixin _$UpdateStatusOrder {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String orderId, StatusOrder newStatus,
+            void Function(AppAction) response)
+        $default, {
+    required TResult Function(String orderId, StatusOrder newStatus) successful,
+    required TResult Function(Object error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String orderId, StatusOrder newStatus,
+            void Function(AppAction) response)?
+        $default, {
+    TResult Function(String orderId, StatusOrder newStatus)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(UpdateStatusOrder$ value) $default, {
+    required TResult Function(UpdateStatusOrderSuccessful value) successful,
+    required TResult Function(UpdateStatusOrderError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(UpdateStatusOrder$ value)? $default, {
+    TResult Function(UpdateStatusOrderSuccessful value)? successful,
+    TResult Function(UpdateStatusOrderError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateStatusOrderCopyWith<$Res> {
+  factory $UpdateStatusOrderCopyWith(
+          UpdateStatusOrder value, $Res Function(UpdateStatusOrder) then) =
+      _$UpdateStatusOrderCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$UpdateStatusOrderCopyWithImpl<$Res>
+    implements $UpdateStatusOrderCopyWith<$Res> {
+  _$UpdateStatusOrderCopyWithImpl(this._value, this._then);
+
+  final UpdateStatusOrder _value;
+  // ignore: unused_field
+  final $Res Function(UpdateStatusOrder) _then;
+}
+
+/// @nodoc
+abstract class $UpdateStatusOrder$CopyWith<$Res> {
+  factory $UpdateStatusOrder$CopyWith(
+          UpdateStatusOrder$ value, $Res Function(UpdateStatusOrder$) then) =
+      _$UpdateStatusOrder$CopyWithImpl<$Res>;
+  $Res call(
+      {String orderId,
+      StatusOrder newStatus,
+      void Function(AppAction) response});
+}
+
+/// @nodoc
+class _$UpdateStatusOrder$CopyWithImpl<$Res>
+    extends _$UpdateStatusOrderCopyWithImpl<$Res>
+    implements $UpdateStatusOrder$CopyWith<$Res> {
+  _$UpdateStatusOrder$CopyWithImpl(
+      UpdateStatusOrder$ _value, $Res Function(UpdateStatusOrder$) _then)
+      : super(_value, (v) => _then(v as UpdateStatusOrder$));
+
+  @override
+  UpdateStatusOrder$ get _value => super._value as UpdateStatusOrder$;
+
+  @override
+  $Res call({
+    Object? orderId = freezed,
+    Object? newStatus = freezed,
+    Object? response = freezed,
+  }) {
+    return _then(UpdateStatusOrder$(
+      orderId: orderId == freezed
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+      newStatus: newStatus == freezed
+          ? _value.newStatus
+          : newStatus // ignore: cast_nullable_to_non_nullable
+              as StatusOrder,
+      response: response == freezed
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as void Function(AppAction),
+    ));
+  }
+}
+
+/// @nodoc
+class _$UpdateStatusOrder$ implements UpdateStatusOrder$ {
+  const _$UpdateStatusOrder$(
+      {required this.orderId, required this.newStatus, required this.response});
+
+  @override
+  final String orderId;
+  @override
+  final StatusOrder newStatus;
+  @override
+  final void Function(AppAction) response;
+
+  @override
+  String toString() {
+    return 'UpdateStatusOrder(orderId: $orderId, newStatus: $newStatus, response: $response)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UpdateStatusOrder$ &&
+            (identical(other.orderId, orderId) ||
+                const DeepCollectionEquality()
+                    .equals(other.orderId, orderId)) &&
+            (identical(other.newStatus, newStatus) ||
+                const DeepCollectionEquality()
+                    .equals(other.newStatus, newStatus)) &&
+            (identical(other.response, response) ||
+                const DeepCollectionEquality()
+                    .equals(other.response, response)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(orderId) ^
+      const DeepCollectionEquality().hash(newStatus) ^
+      const DeepCollectionEquality().hash(response);
+
+  @JsonKey(ignore: true)
+  @override
+  $UpdateStatusOrder$CopyWith<UpdateStatusOrder$> get copyWith =>
+      _$UpdateStatusOrder$CopyWithImpl<UpdateStatusOrder$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String orderId, StatusOrder newStatus,
+            void Function(AppAction) response)
+        $default, {
+    required TResult Function(String orderId, StatusOrder newStatus) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return $default(orderId, newStatus, response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String orderId, StatusOrder newStatus,
+            void Function(AppAction) response)?
+        $default, {
+    TResult Function(String orderId, StatusOrder newStatus)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(orderId, newStatus, response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(UpdateStatusOrder$ value) $default, {
+    required TResult Function(UpdateStatusOrderSuccessful value) successful,
+    required TResult Function(UpdateStatusOrderError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(UpdateStatusOrder$ value)? $default, {
+    TResult Function(UpdateStatusOrderSuccessful value)? successful,
+    TResult Function(UpdateStatusOrderError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateStatusOrder$ implements UpdateStatusOrder {
+  const factory UpdateStatusOrder$(
+      {required String orderId,
+      required StatusOrder newStatus,
+      required void Function(AppAction) response}) = _$UpdateStatusOrder$;
+
+  String get orderId => throw _privateConstructorUsedError;
+  StatusOrder get newStatus => throw _privateConstructorUsedError;
+  void Function(AppAction) get response => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UpdateStatusOrder$CopyWith<UpdateStatusOrder$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateStatusOrderSuccessfulCopyWith<$Res> {
+  factory $UpdateStatusOrderSuccessfulCopyWith(
+          UpdateStatusOrderSuccessful value,
+          $Res Function(UpdateStatusOrderSuccessful) then) =
+      _$UpdateStatusOrderSuccessfulCopyWithImpl<$Res>;
+  $Res call({String orderId, StatusOrder newStatus});
+}
+
+/// @nodoc
+class _$UpdateStatusOrderSuccessfulCopyWithImpl<$Res>
+    extends _$UpdateStatusOrderCopyWithImpl<$Res>
+    implements $UpdateStatusOrderSuccessfulCopyWith<$Res> {
+  _$UpdateStatusOrderSuccessfulCopyWithImpl(UpdateStatusOrderSuccessful _value,
+      $Res Function(UpdateStatusOrderSuccessful) _then)
+      : super(_value, (v) => _then(v as UpdateStatusOrderSuccessful));
+
+  @override
+  UpdateStatusOrderSuccessful get _value =>
+      super._value as UpdateStatusOrderSuccessful;
+
+  @override
+  $Res call({
+    Object? orderId = freezed,
+    Object? newStatus = freezed,
+  }) {
+    return _then(UpdateStatusOrderSuccessful(
+      orderId: orderId == freezed
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+      newStatus: newStatus == freezed
+          ? _value.newStatus
+          : newStatus // ignore: cast_nullable_to_non_nullable
+              as StatusOrder,
+    ));
+  }
+}
+
+/// @nodoc
+class _$UpdateStatusOrderSuccessful implements UpdateStatusOrderSuccessful {
+  const _$UpdateStatusOrderSuccessful(
+      {required this.orderId, required this.newStatus});
+
+  @override
+  final String orderId;
+  @override
+  final StatusOrder newStatus;
+
+  @override
+  String toString() {
+    return 'UpdateStatusOrder.successful(orderId: $orderId, newStatus: $newStatus)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UpdateStatusOrderSuccessful &&
+            (identical(other.orderId, orderId) ||
+                const DeepCollectionEquality()
+                    .equals(other.orderId, orderId)) &&
+            (identical(other.newStatus, newStatus) ||
+                const DeepCollectionEquality()
+                    .equals(other.newStatus, newStatus)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(orderId) ^
+      const DeepCollectionEquality().hash(newStatus);
+
+  @JsonKey(ignore: true)
+  @override
+  $UpdateStatusOrderSuccessfulCopyWith<UpdateStatusOrderSuccessful>
+      get copyWith => _$UpdateStatusOrderSuccessfulCopyWithImpl<
+          UpdateStatusOrderSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String orderId, StatusOrder newStatus,
+            void Function(AppAction) response)
+        $default, {
+    required TResult Function(String orderId, StatusOrder newStatus) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return successful(orderId, newStatus);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String orderId, StatusOrder newStatus,
+            void Function(AppAction) response)?
+        $default, {
+    TResult Function(String orderId, StatusOrder newStatus)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(orderId, newStatus);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(UpdateStatusOrder$ value) $default, {
+    required TResult Function(UpdateStatusOrderSuccessful value) successful,
+    required TResult Function(UpdateStatusOrderError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(UpdateStatusOrder$ value)? $default, {
+    TResult Function(UpdateStatusOrderSuccessful value)? successful,
+    TResult Function(UpdateStatusOrderError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateStatusOrderSuccessful implements UpdateStatusOrder {
+  const factory UpdateStatusOrderSuccessful(
+      {required String orderId,
+      required StatusOrder newStatus}) = _$UpdateStatusOrderSuccessful;
+
+  String get orderId => throw _privateConstructorUsedError;
+  StatusOrder get newStatus => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UpdateStatusOrderSuccessfulCopyWith<UpdateStatusOrderSuccessful>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateStatusOrderErrorCopyWith<$Res> {
+  factory $UpdateStatusOrderErrorCopyWith(UpdateStatusOrderError value,
+          $Res Function(UpdateStatusOrderError) then) =
+      _$UpdateStatusOrderErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$UpdateStatusOrderErrorCopyWithImpl<$Res>
+    extends _$UpdateStatusOrderCopyWithImpl<$Res>
+    implements $UpdateStatusOrderErrorCopyWith<$Res> {
+  _$UpdateStatusOrderErrorCopyWithImpl(UpdateStatusOrderError _value,
+      $Res Function(UpdateStatusOrderError) _then)
+      : super(_value, (v) => _then(v as UpdateStatusOrderError));
+
+  @override
+  UpdateStatusOrderError get _value => super._value as UpdateStatusOrderError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(UpdateStatusOrderError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+    ));
+  }
+}
+
+@Implements(ErrorAction)
+
+/// @nodoc
+class _$UpdateStatusOrderError implements UpdateStatusOrderError {
+  const _$UpdateStatusOrderError(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'UpdateStatusOrder.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UpdateStatusOrderError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @JsonKey(ignore: true)
+  @override
+  $UpdateStatusOrderErrorCopyWith<UpdateStatusOrderError> get copyWith =>
+      _$UpdateStatusOrderErrorCopyWithImpl<UpdateStatusOrderError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String orderId, StatusOrder newStatus,
+            void Function(AppAction) response)
+        $default, {
+    required TResult Function(String orderId, StatusOrder newStatus) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String orderId, StatusOrder newStatus,
+            void Function(AppAction) response)?
+        $default, {
+    TResult Function(String orderId, StatusOrder newStatus)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(UpdateStatusOrder$ value) $default, {
+    required TResult Function(UpdateStatusOrderSuccessful value) successful,
+    required TResult Function(UpdateStatusOrderError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(UpdateStatusOrder$ value)? $default, {
+    TResult Function(UpdateStatusOrderSuccessful value)? successful,
+    TResult Function(UpdateStatusOrderError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateStatusOrderError
+    implements UpdateStatusOrder, ErrorAction {
+  const factory UpdateStatusOrderError(Object error) = _$UpdateStatusOrderError;
+
+  Object get error => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UpdateStatusOrderErrorCopyWith<UpdateStatusOrderError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
