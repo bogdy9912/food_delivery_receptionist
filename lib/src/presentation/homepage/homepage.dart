@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:food_delivery_receptionist/src/actions/index.dart';
 import 'package:food_delivery_receptionist/src/actions/orders/index.dart';
-import 'package:food_delivery_receptionist/src/container/orders/pending_orders_container.dart';
 import 'package:food_delivery_receptionist/src/models/index.dart';
+import 'package:food_delivery_receptionist/src/presentation/homepage/accepted_orders_page.dart';
+import 'package:food_delivery_receptionist/src/presentation/homepage/pending_orders_page.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage();
 
-  void _response(AppAction action) {}
+  @override
+  _HomepageState createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  List<BottomNavigationBarItem> get items => const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: Icon(Icons.list_alt), label: 'Orders'),
+        BottomNavigationBarItem(icon: Icon(Icons.inventory), label: 'accepted'),
+        BottomNavigationBarItem(icon: Icon(Icons.done_all), label: 'done'),
+      ];
+
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,41 +33,17 @@ class Homepage extends StatelessWidget {
                   StoreProvider.of<AppState>(context).dispatch(const GetNewOrders(companyId: 'HIxvesXRNrHMGxZM4TQy')))
         ],
       ),
-      body: PendingOrdersContainer(
-        builder: (BuildContext context, Map<String, Order> orders) {
-          final List<Order> sortedOrdersList = orders.values.toList();
-          sortedOrdersList.sort((Order a, Order b) => a.date.compareTo(b.date));
-          return Container(
-            color: Colors.blue,
-            width: double.infinity,
-            height: 200,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  sortedOrdersList[0].date,
-                  style: const TextStyle(color: Colors.red),
-                ),
-                TextButton(
-                    onPressed: () {
-                      StoreProvider.of<AppState>(context).dispatch(UpdateStatusOrder(
-                          orderId: sortedOrdersList[0].id, newStatus: StatusOrder.acceptedOrder, response: _response));
-                    },
-                    child: Text(
-                      'accept',
-                      style: TextStyle(color: Colors.white),
-                    )),
-                TextButton(
-                    onPressed: () {
-                      StoreProvider.of<AppState>(context).dispatch(UpdateStatusOrder(
-                          orderId: sortedOrdersList[0].id, newStatus: StatusOrder.declinedOrder, response: _response));
-                    },
-                    child: Text(
-                      'decline',
-                      style: TextStyle(color: Colors.white),
-                    )),
-              ],
-            ),
-          );
+      body: <Widget>[
+        const PendingOrdersPage(),
+        AcceptedOrdersPage(),
+      ][_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        items: items,
+        onTap: (int index) {
+          setState(() {
+            _selectedIndex = index;
+          });
         },
       ),
     );
