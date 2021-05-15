@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:food_delivery_receptionist/src/actions/index.dart';
+import 'package:food_delivery_receptionist/src/actions/orders/index.dart';
 import 'package:food_delivery_receptionist/src/models/index.dart';
 
 class OrderWidget extends StatelessWidget {
-  const OrderWidget({required this.buttons, required this.order});
+  const OrderWidget({required this.order});
 
-  final List<Widget> buttons;
   final Order order;
+
+  void _response(AppAction action) {}
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +28,12 @@ class OrderWidget extends StatelessWidget {
               Text('${order.total}'),
             ],
           ),
-          Row(
-            mainAxisAlignment: buttons.length == 1 ? MainAxisAlignment.center : MainAxisAlignment.spaceAround,
-            children: buttons,
+          ElevatedButton(
+            onPressed: () {
+              StoreProvider.of<AppState>(context).dispatch(
+                  UpdateStatusOrder(orderId: order.id, newStatus: StatusOrder.doneProcessing, response: _response));
+            },
+            child: const Text('Finish'),
           ),
         ],
       ),

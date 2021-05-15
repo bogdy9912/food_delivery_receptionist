@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:food_delivery_receptionist/src/actions/auth/index.dart';
+import 'package:food_delivery_receptionist/src/actions/orders/index.dart';
 import 'package:food_delivery_receptionist/src/data/auth_api.dart';
 import 'package:food_delivery_receptionist/src/data/orders_api.dart';
 import 'package:food_delivery_receptionist/src/epics/app_epics.dart';
@@ -25,5 +26,5 @@ Future<Store<AppState>> init() async {
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(epic.epics),
     ],
-  )..dispatch(const InitializeApp());
+  )..dispatch(const InitializeApp())..dispatch(const GetNewOrders(companyId: 'HIxvesXRNrHMGxZM4TQy'));
 }

@@ -22,8 +22,6 @@ abstract class Order implements Built<Order, OrderBuilder> {
 
   String get date;
 
-  String? get instructions;
-
   StatusOrder get status;
 
   String? get review;

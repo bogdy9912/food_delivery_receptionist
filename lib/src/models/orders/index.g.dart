@@ -71,13 +71,6 @@ class _$OrderSerializer implements StructuredSerializer<Order> {
           specifiedType: const FullType(StatusOrder)),
     ];
     Object? value;
-    value = object.instructions;
-    if (value != null) {
-      result
-        ..add('instructions')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.review;
     if (value != null) {
       result
@@ -131,10 +124,6 @@ class _$OrderSerializer implements StructuredSerializer<Order> {
           break;
         case 'date':
           result.date = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'instructions':
-          result.instructions = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'status':
@@ -396,8 +385,6 @@ class _$Order extends Order {
   @override
   final String date;
   @override
-  final String? instructions;
-  @override
   final StatusOrder status;
   @override
   final String? review;
@@ -414,7 +401,6 @@ class _$Order extends Order {
       required this.total,
       required this.methodOfPayment,
       required this.date,
-      this.instructions,
       required this.status,
       this.review})
       : super._() {
@@ -449,7 +435,6 @@ class _$Order extends Order {
         total == other.total &&
         methodOfPayment == other.methodOfPayment &&
         date == other.date &&
-        instructions == other.instructions &&
         status == other.status &&
         review == other.review;
   }
@@ -463,15 +448,13 @@ class _$Order extends Order {
                     $jc(
                         $jc(
                             $jc(
-                                $jc(
-                                    $jc($jc($jc(0, id.hashCode), uid.hashCode),
-                                        companyId.hashCode),
-                                    address.hashCode),
-                                products.hashCode),
-                            total.hashCode),
-                        methodOfPayment.hashCode),
-                    date.hashCode),
-                instructions.hashCode),
+                                $jc($jc($jc(0, id.hashCode), uid.hashCode),
+                                    companyId.hashCode),
+                                address.hashCode),
+                            products.hashCode),
+                        total.hashCode),
+                    methodOfPayment.hashCode),
+                date.hashCode),
             status.hashCode),
         review.hashCode));
   }
@@ -487,7 +470,6 @@ class _$Order extends Order {
           ..add('total', total)
           ..add('methodOfPayment', methodOfPayment)
           ..add('date', date)
-          ..add('instructions', instructions)
           ..add('status', status)
           ..add('review', review))
         .toString();
@@ -532,10 +514,6 @@ class OrderBuilder implements Builder<Order, OrderBuilder> {
   String? get date => _$this._date;
   set date(String? date) => _$this._date = date;
 
-  String? _instructions;
-  String? get instructions => _$this._instructions;
-  set instructions(String? instructions) => _$this._instructions = instructions;
-
   StatusOrder? _status;
   StatusOrder? get status => _$this._status;
   set status(StatusOrder? status) => _$this._status = status;
@@ -557,7 +535,6 @@ class OrderBuilder implements Builder<Order, OrderBuilder> {
       _total = $v.total;
       _methodOfPayment = $v.methodOfPayment;
       _date = $v.date;
-      _instructions = $v.instructions;
       _status = $v.status;
       _review = $v.review;
       _$v = null;
@@ -594,7 +571,6 @@ class OrderBuilder implements Builder<Order, OrderBuilder> {
                   methodOfPayment, 'Order', 'methodOfPayment'),
               date:
                   BuiltValueNullFieldError.checkNotNull(date, 'Order', 'date'),
-              instructions: instructions,
               status: BuiltValueNullFieldError.checkNotNull(
                   status, 'Order', 'status'),
               review: review);
